@@ -1,6 +1,7 @@
 {
   // GLOBAL VARIABLES \\
   let sliderTimeoutHandler
+  const alphabeticalFilter = document.getElementById('alphabeticalFilter')
   const closeLightboxBtn = document.getElementById('closeLightbox')
   const detailsContent = document.getElementById('content')
   const detailsHeading = document.getElementById('heading')
@@ -266,6 +267,9 @@
   )
   window.addEventListener('load', () => loader.classList.remove('show'))
   window.addEventListener('hashchange', () => clearSearch())
+  alphabeticalFilter.querySelectorAll('li').forEach(li => {
+    li.addEventListener('click', () => clearSearch())
+  })
 
   init()
 }
